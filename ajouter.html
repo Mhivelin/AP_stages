@@ -31,7 +31,7 @@
         <h1 class="text-center">Ajouter</h1>
 
         <label for="choix_ajout" class="form-label">Que voulez vous ajouter ?</label>
-        <select class="form-select" id="choix_ajout">
+        <select class="form-select" id="choix_ajout" onchange="afficher()">
             <option value="1">Ajouter un étudiant</option>
             <option value="2" selected>Ajouter un stage</option>
             <option value="3">Ajouter une entreprise</option>
@@ -47,13 +47,15 @@
                 <h1>stage</h1>
                 <form method="POST">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="etudiant_existant" checked>
+                        <input class="form-check-input" type="checkbox" role="switch" id="etudiant_existant" checked
+                            onchange="afficher()">
                         <label class="form-check-label" for="flexSwitchCheckDefault">l'étudiant existe t'il déjà
                             ?</label>
                     </div>
 
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="entreprise_existante" checked>
+                        <input class="form-check-input" type="checkbox" role="switch" id="entreprise_existante" checked
+                            onchange="afficher()">
                         <label class="form-check-label" for="flexSwitchCheckDefault">l'entreprise existe t'elle déjà
                             ?</label>
 
@@ -248,19 +250,6 @@
             }
         }
 
-        //verifier si la valeur du select est changé
-        document.getElementById("choix_ajout").addEventListener('change', function () {
-            afficher();
-        });
-
-        //verifier si la valeur du switch est changé
-        document.getElementById("etudiant_existant").addEventListener('change', function () {
-            afficher();
-        });
-
-        document.getElementById("entreprise_existante").addEventListener('change', function () {
-            afficher();
-        });
 
 
 
