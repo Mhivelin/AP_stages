@@ -13,24 +13,36 @@
 
 
     <?php
+  session_start();
+  if(isset($_SESSION["autoriser"]) && $_SESSION["autoriser"]=="oui"){
+      echo "Bienvenue ".$_SESSION["login"];
+  }else{
+      header('Location: login.php');
+      exit();
+  }
+  
 
-        $host = 'localhost';
-        $login = 'root';
-        $password = '';
-        $bdsql = new PDO('mysql:host='.$host.';dbname=stages', $login, $password);
+        //$host = 'localhost';
+        //$login = 'root';
+        //$password = '';
+        //$bdsql = new PDO('mysql:host='.$host.';dbname=stages', $login, $password);
 
     ?>
 
     <div class="navbar navbar-expand-lg">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Accueil</a>
+                <a class="nav-link" href="index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="consulter.html">Consulter</a>
+                <a class="nav-link" href="consulter.php">Consulter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="ajouter.html">Ajouter</a>
+                <a class="nav-link" href="ajouter.php">Ajouter</a>
+            </li>
+            
+            <li class="nav-item">
+                    <a class="nav-link" href="deconnection.php">Deconnection</a>
             </li>
 
         </ul>
@@ -109,13 +121,11 @@
                     </thead>
                     <tbody>
                         <?php
+                        
 
                         //$sql = "SELECT * FROM entreprise";
                         //$result = $bdsql->query($sql);
                         //$result->setFetchMode(PDO::FETCH_ASSOC);
-
-
-                        result = [nom => "nom1", prenom => "prenom1", entreprise => "entreprise1", annee => "annee1"], [nom => "nom2", prenom => "prenom2", entreprise => "entreprise2", annee => "annee2"], [nom => "nom3", prenom => "prenom3", entreprise => "entreprise3", annee => "annee3"]];
 
                         while ($row = $result->fetch()) {
                             echo "<tr>";
@@ -123,101 +133,18 @@
                             echo "<td>".$row['prenom']."</td>";
                             echo "<td>".$row['entreprise']."</td>";
                             echo "<td>".$row['annee']."</td>";
+                            echo "</tr>";
+                        }
 
-                            echo "<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"> afficher plus</a>";
-                            echo "<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">";
-                            echo "<div class="offcanvas-header">";
-                            echo "  <h5 class="offcanvas-title" id="offcanvasExampleLabel">Stage : </h5>";
-                            echo "  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>";
-                            echo "</div>";
-                            echo "<div class="offcanvas-body">
-                            echo "    <div class="d-flex flex-row bd-highlight mb-3">";
-                            echo "        <div class="p-2 bd-highlight">Nom : </div>";
-                            echo "        <div class="p-2 bd-highlight"><?php echo $row['nom']; ?>
-                        echo "
-            </div>";
-            echo "
-        </div>";
-        echo " <div class="d-flex flex-row bd-highlight mb-3">";
-            echo " <div class="p-2 bd-highlight">Prénom : </div>";
-            echo " <div class="p-2 bd-highlight">
-                <?php echo $row['prenom']; ?>
-            </div>";
-            echo " </div>";
-        echo " <div class="d-flex flex-row bd-highlight mb-3">";
-            echo " <div class="p-2 bd-highlight">Entreprise : </div>";
-            echo " <div class="p-2 bd-highlight">
-                <?php echo $row['entreprise']; ?>
-            </div>";
-            echo " </div>";
-        echo " <div class="d-flex flex-row bd-highlight mb-3">";
-            echo " <div class="p-2 bd-highlight">Année : </div>";
-            echo " <div class="p-2 bd-highlight">
-                <?php echo $row['annee']; ?>
-            </div>";
-            echo " </div>";
-        echo " <div class="d-flex flex-row bd-highlight mb-3">";
-            echo " <div class="p-2 bd-highlight">Adresse : </div>";
-            echo " <div class="p-2 bd-highlight">
-                <?php echo $row['adresse']; ?>
-            </div>";
-            echo " </div>";
-        echo " <div class="d-flex flex-row bd-highlight mb-3">";
-            echo " <div class="p-2 bd-highlight">Date début : </div>";
-            echo " <div class="p-2 bd-highlight">
-                <?php echo $row['date_debut']; ?>
-            </div>";
-            echo " </div>";
-        echo " <div class="d-flex flex-row bd-highlight mb-3">";
-            echo " <div class="p-2 bd-highlight">Date fin : </div>";
-            echo " <div class="p-2 bd-highlight">
-                <?php echo $row['date_fin']; ?>
-            </div>";
-            echo " </div>";
-        echo "
-    </div>";
-    echo "</div>";
-    echo "</tr>";
-    }
-    ?>
-    </tbody>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <tr>
-
+                        ?>
+                
+                    </tbody>
+                </table>
+            </div>
 
         </div>
-        </div>
-        </div>
 
-    </tr>
-    </tbody>
-    </table>
     </div>
-
 
 
 

@@ -11,21 +11,34 @@
 
 <body>
 
+<?php
+  session_start();
+  if(isset($_SESSION["autoriser"]) && $_SESSION["autoriser"]=="oui"){
+      echo "Bienvenue ".$_SESSION["login"];
+  }else{
+      header('Location: login.php');
+      exit();
+  }
+  ?>
 
     <div class="navbar navbar-expand-lg">
-        <ul class="navbar-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="consulter.php">Consulter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ajouter.php">Ajouter</a>
+                </li>
+                
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Accueil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="consulter.html">Consulter</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ajouter.html">Ajouter</a>
+                    <a class="nav-link" href="deconnection.php">Deconnection</a>
             </li>
 
-        </ul>
-    </div>
+            </ul>
+        </div>
 
     <div class="container">
         <h1 class="text-center">Ajouter</h1>
