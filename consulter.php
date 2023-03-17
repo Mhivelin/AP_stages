@@ -127,6 +127,27 @@
                         //$result = $bdsql->query($sql);
                         //$result->setFetchMode(PDO::FETCH_ASSOC);
 
+                        $result = [
+                            [
+                                'nom' => 'nom1',
+                                'prenom' => 'prenom1',
+                                'entreprise' => 'entreprise1',
+                                'annee' => 'annee1',
+                            ],
+                            [
+                                'nom' => 'nom2',
+                                'prenom' => 'prenom2',
+                                'entreprise' => 'entreprise2',
+                                'annee' => 'annee2',
+                            ],
+                            [
+                                'nom' => 'nom3',
+                                'prenom' => 'prenom3',
+                                'entreprise' => 'entreprise3',
+                                'annee' => 'annee3',
+                            ],
+                        ];
+
                         while ($row = $result->fetch()) {
                             echo "<tr>";
                             echo "<td>".$row['nom']."</td>";

@@ -5,40 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stages</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
 
-<?php
-  session_start();
-  if(isset($_SESSION["autoriser"]) && $_SESSION["autoriser"]=="oui"){
-      echo "Bienvenue ".$_SESSION["login"];
-  }else{
-      header('Location: login.php');
-      exit();
-  }
-  ?>
+    <?php
+    session_start();
+    if (isset($_SESSION["autoriser"]) && $_SESSION["autoriser"] == "oui") {
+        echo "Bienvenue " . $_SESSION["login"];
+    } else {
+        header('Location: login.php');
+        exit();
+    }
+    ?>
 
     <div class="navbar navbar-expand-lg">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="consulter.php">Consulter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ajouter.php">Ajouter</a>
-                </li>
-                
+        <ul class="navbar-nav">
             <li class="nav-item">
-                    <a class="nav-link" href="deconnection.php">Deconnection</a>
+                <a class="nav-link" href="index.php">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="consulter.php">Consulter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ajouter.php">Ajouter</a>
             </li>
 
-            </ul>
-        </div>
+            <li class="nav-item">
+                <a class="nav-link" href="deconnection.php">Deconnection</a>
+            </li>
+
+        </ul>
+    </div>
 
     <div class="container">
         <h1 class="text-center">Ajouter</h1>
@@ -60,15 +59,13 @@
                 <h1>stage</h1>
                 <form method="POST">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="etudiant_existant" checked
-                            onchange="afficher()">
+                        <input class="form-check-input" type="checkbox" role="switch" id="etudiant_existant" checked onchange="afficher()">
                         <label class="form-check-label" for="flexSwitchCheckDefault">l'étudiant existe t'il déjà
                             ?</label>
                     </div>
 
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="entreprise_existante" checked
-                            onchange="afficher()">
+                        <input class="form-check-input" type="checkbox" role="switch" id="entreprise_existante" checked onchange="afficher()">
                         <label class="form-check-label" for="flexSwitchCheckDefault">l'entreprise existe t'elle déjà
                             ?</label>
 
@@ -201,7 +198,6 @@
 
 
     <script type="text/javascript">
-
         // cacher les divs de chaque type d'ajout
         document.getElementById("ajouter_etudiant").style.display = "none";
         document.getElementById(" infos_ajout_stage").style.display = "block";
@@ -237,16 +233,14 @@
                 if (document.getElementById("etudiant_existant").checked) {
                     document.getElementById("choix_etudiant").style.display = "block";
                     document.getElementById("ajouter_etudiant").style.display = "none";
-                }
-                else {
+                } else {
                     document.getElementById("choix_etudiant").style.display = "none";
                     document.getElementById("ajouter_etudiant").style.display = "block";
                 }
                 if (document.getElementById("entreprise_existante").checked) {
                     document.getElementById("choix_entreprise").style.display = "block";
                     document.getElementById("ajouter_entreprise").style.display = "none";
-                }
-                else {
+                } else {
                     document.getElementById("choix_entreprise").style.display = "none";
                     document.getElementById("ajouter_entreprise").style.display = "block";
                 }
@@ -262,15 +256,8 @@
 
             }
         }
-
-
-
-
-
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
 <footer>
