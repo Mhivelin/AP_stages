@@ -5,27 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stages</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
 
 
     <?php
-  session_start();
-  if(isset($_SESSION["autoriser"]) && $_SESSION["autoriser"]=="oui"){
-      echo "Bienvenue ".$_SESSION["login"];
-  }else{
-      header('Location: login.php');
-      exit();
-  }
-  
+    session_start();
+    if (isset($_SESSION["autoriser"]) && $_SESSION["autoriser"] == "oui") {
+        echo "Bienvenue " . $_SESSION["login"];
+    } else {
+        header('Location: login.php');
+        exit();
+    }
 
-        //$host = 'localhost';
-        //$login = 'root';
-        //$password = '';
-        //$bdsql = new PDO('mysql:host='.$host.';dbname=stages', $login, $password);
+
+    //$host = 'localhost';
+    //$login = 'root';
+    //$password = '';
+    //$bdsql = new PDO('mysql:host='.$host.';dbname=stages', $login, $password);
 
     ?>
 
@@ -40,9 +39,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="ajouter.php">Ajouter</a>
             </li>
-            
+
             <li class="nav-item">
-                    <a class="nav-link" href="deconnection.php">Deconnection</a>
+                <a class="nav-link" href="deconnection.php">Deconnection</a>
             </li>
 
         </ul>
@@ -78,7 +77,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        
+
 
                         $sql = "SELECT * FROM etudiant";
                         $result = $bdsql->query($sql);
@@ -86,13 +85,13 @@
 
                         while ($row = $result->fetch()) {
                             echo "<tr>";
-                            echo "<td>".$row['nom']."</td>";
-                            echo "<td>".$row['prenom']."</td>";
-                            echo "<td>".$row['annee']."</td>";
-                            echo "<td>".$row['entreprise']."</td>";
-                            echo "<td>".$row['adresse']."</td>";
-                            echo "<td>".$row['date_debut']."</td>";
-                            echo "<td>".$row['date_fin']."</td>";
+                            echo "<td>" . $row['nom'] . "</td>";
+                            echo "<td>" . $row['prenom'] . "</td>";
+                            echo "<td>" . $row['annee'] . "</td>";
+                            echo "<td>" . $row['entreprise'] . "</td>";
+                            echo "<td>" . $row['adresse'] . "</td>";
+                            echo "<td>" . $row['date_debut'] . "</td>";
+                            echo "<td>" . $row['date_fin'] . "</td>";
                             echo "</tr>";
                         }
 
@@ -121,44 +120,25 @@
                     </thead>
                     <tbody>
                         <?php
-                        
 
-                        //$sql = "SELECT * FROM entreprise";
-                        //$result = $bdsql->query($sql);
-                        //$result->setFetchMode(PDO::FETCH_ASSOC);
 
-                        $result = [
-                            [
-                                'nom' => 'nom1',
-                                'prenom' => 'prenom1',
-                                'entreprise' => 'entreprise1',
-                                'annee' => 'annee1',
-                            ],
-                            [
-                                'nom' => 'nom2',
-                                'prenom' => 'prenom2',
-                                'entreprise' => 'entreprise2',
-                                'annee' => 'annee2',
-                            ],
-                            [
-                                'nom' => 'nom3',
-                                'prenom' => 'prenom3',
-                                'entreprise' => 'entreprise3',
-                                'annee' => 'annee3',
-                            ],
-                        ];
+                        $sql = "SELECT * FROM entreprise";
+                        $result = $bdsql->query($sql);
+                        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+
 
                         while ($row = $result->fetch()) {
                             echo "<tr>";
-                            echo "<td>".$row['nom']."</td>";
-                            echo "<td>".$row['prenom']."</td>";
-                            echo "<td>".$row['entreprise']."</td>";
-                            echo "<td>".$row['annee']."</td>";
+                            echo "<td>" . $row['nom'] . "</td>";
+                            echo "<td>" . $row['prenom'] . "</td>";
+                            echo "<td>" . $row['entreprise'] . "</td>";
+                            echo "<td>" . $row['annee'] . "</td>";
                             echo "</tr>";
                         }
 
                         ?>
-                
+
                     </tbody>
                 </table>
             </div>
@@ -170,7 +150,6 @@
 
 
     <script type="text/javascript">
-
         document.getElementById("affichage_etudiant").style.display = "none";
         document.getElementById("affichage_entreprise").style.display = "none";
 
@@ -188,20 +167,13 @@
 
 
         }
-
-
-
-
-
     </script>
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
 </html>
