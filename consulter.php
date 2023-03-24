@@ -21,11 +21,10 @@
     }
 
 
-    //$host = 'localhost';
-    //$login = 'root';
-    //$password = '';
-    //$bdsql = new PDO('mysql:host='.$host.';dbname=stages', $login, $password);
-
+    //$host = "172.16.135.1";
+    //$login = "Ap-Stage";
+    //$password = '123';
+    //$bdsql = new PDO('mysql:host=' . $host . ';dbname=stages', $login, $password)
     ?>
 
     <div class="navbar navbar-expand-lg">
@@ -79,21 +78,17 @@
                         <?php
 
 
-                        $sql = "SELECT * FROM etudiant";
-                        $result = $bdsql->query($sql);
-                        $result->setFetchMode(PDO::FETCH_ASSOC);
-
-                        while ($row = $result->fetch()) {
-                            echo "<tr>";
-                            echo "<td>" . $row['nom'] . "</td>";
-                            echo "<td>" . $row['prenom'] . "</td>";
-                            echo "<td>" . $row['annee'] . "</td>";
-                            echo "<td>" . $row['entreprise'] . "</td>";
-                            echo "<td>" . $row['adresse'] . "</td>";
-                            echo "<td>" . $row['date_debut'] . "</td>";
-                            echo "<td>" . $row['date_fin'] . "</td>";
-                            echo "</tr>";
-                        }
+                        //$sql = "SELECT * FROM etudiant INNER JOIN stage ON etudiant.d = stage.id_etudiant";
+                        //$result = $bdsql->query($sql);
+                        //$result->setFetchMode(PDO::FETCH_ASSOC);
+                        //
+                        //while ($row = $result->fetch()) {
+                        //    echo "<tr>";
+                        //    echo "<td>" . $row['nom'] . "</td>";
+                        //    echo "<td>" . $row['prenom'] . "</td>";
+                        //    echo "<td>" . $row['annee'] . "</td>";
+                        //    
+                        //}
 
                         ?>
 
@@ -119,25 +114,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
 
 
-                        $sql = "SELECT * FROM entreprise";
-                        $result = $bdsql->query($sql);
-                        $result->setFetchMode(PDO::FETCH_ASSOC);
-
-
-
-                        while ($row = $result->fetch()) {
-                            echo "<tr>";
-                            echo "<td>" . $row['nom'] . "</td>";
-                            echo "<td>" . $row['prenom'] . "</td>";
-                            echo "<td>" . $row['entreprise'] . "</td>";
-                            echo "<td>" . $row['annee'] . "</td>";
-                            echo "</tr>";
-                        }
-
-                        ?>
 
                     </tbody>
                 </table>

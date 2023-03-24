@@ -22,7 +22,7 @@ if (isset($valider)) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
+    <title>register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
@@ -54,10 +54,15 @@ if (isset($valider)) {
                 <input type="password" class="form-control" id="password" name="password" placeholder="Entrer votre mot de passe">
             </div>
             <br>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Entrer votre adresse email">
+            </div>
             <button type="submit" class="btn btn-primary" name="valider">Valider</button>
-            <button type="newaccount" class="btn btn-primary" name="valider">Valider</button>
         </form>
     </div>
+
+
 
     <?php
     if ($erreur != "") {

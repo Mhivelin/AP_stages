@@ -260,29 +260,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="footer">
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="images/logo.png" alt="logo" width="100px" height="100px">
-                            </td>
-                            <td>
-                                <h3>Université de Technologie de Compiègne</h3>
-                                <p>2, rue de la Digue, 60200 Compiègne</p>
-                                <p>Tél. : 03 44 23 23 23</p>
-                                <p>Mail :
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-
-
-</footer>
 
 </html>

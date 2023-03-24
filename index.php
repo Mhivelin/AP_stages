@@ -59,7 +59,7 @@
           <div class="card-body">
             <h5 class="card-title">Consulter</h5>
             <p class="card-text">Consulter les stages</p>
-            <a href="consulter.html" class="btn btn-primary">Consulter</a>
+            <a href="consulter.php" class="btn btn-primary">Consulter</a>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
           <div class="card-body">
             <h5 class="card-title">Ajouter</h5>
             <p class="card-text">Ajouter un stage</p>
-            <a href="ajouter.html" class="btn btn-primary">Ajouter</a>
+            <a href="ajouter.php" class="btn btn-primary">Ajouter</a>
           </div>
         </div>
       </div>
