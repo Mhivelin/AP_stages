@@ -2,15 +2,16 @@
 session_start();
 @$login = $_POST['login'];
 @$password = $_POST['password'];
+@$confirm_password = $_POST['confirm_password'];
+@$email = $_POST['email'];
 @$valider = $_POST['valider'];
 $erreur = "";
 if (isset($valider)) {
-    // password = admin (md5) = 21232f297a57a5a743894a0e4a801fc3
-    if ($login == "admin" && md5($password) == "21232f297a57a5a743894a0e4a801fc3") {
+    if ($login == "admin" && md5($password) == "21232f297a57a5a743894a0e4a801fc3" && $password == $confirm_password) {
         $_SESSION["autoriser"] = "oui";
         header('Location: index.php');
     } else {
-        $erreur = "Login ou mot de passe incorrect";
+        $erreur = "Login ou mot de passe incorrect ou confirmation de mot de passe non identique";
     }
 }
 ?>
@@ -42,7 +43,7 @@ if (isset($valider)) {
     </div>
 
     <div class="container">
-        <h1 class="text-center">Login</h1>
+        <h1 class="text-center">register</h1>
         <form action="" method="post">
             <div class="form-group">
                 <label for="login">Login</label>
@@ -55,6 +56,11 @@ if (isset($valider)) {
             </div>
             <br>
             <div class="form-group">
+                <label for="confirm_password">Confirmation de mot de passe</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirmer votre mot de passe">
+            </div>
+            <br>
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Entrer votre adresse email">
             </div>
@@ -63,14 +69,12 @@ if (isset($valider)) {
     </div>
 
 
-
     <?php
     if ($erreur != "") {
         echo "<div class='alert alert-danger' role='alert'>
         $erreur
       </div>";
     }
-
 
 
     ?>

@@ -38,7 +38,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="deconnection.php">Deconnection</a>
+        <a class="nav-link" href="deconnexion.php">deconnexion</a>
       </li>
 
 

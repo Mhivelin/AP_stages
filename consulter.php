@@ -40,7 +40,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="deconnection.php">Deconnection</a>
+                <a class="nav-link" href="deconnexion.php">deconnexion</a>
             </li>
 
         </ul>
@@ -51,77 +51,77 @@
         <h1 class="text-center">Consulter</h1>
         <br>
 
-        <p>le type d'information à consulter</p>
-        <select class="form-select" id="type_consultation" onchange="afficher()">
-            <option selected>choisir le type de consultation</option>
-            <option value="1">Consulter les étudiants</option>
-            <option value="3">Consulter les entreprises</option>
-        </select>
-        <div id="affichage_etudiant" class="card">
-            <div class="card-header">
-                <h3>Stages</h3>
-            </div>
-            <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Année</th>
-                            <th scope="col">Entreprise</th>
-                            <th scope="col">adresse</th>
-                            <th scope="col">Date début</th>
-                            <th scope="col">Date fin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+        <label>le type d'information à consulter</p>
+            <select class="form-select" id="type_consultation" onchange="afficher()">
+                <option selected>choisir le type de consultation</option>
+                <option value="1">Consulter les étudiants</option>
+                <option value="3">Consulter les entreprises</option>
+            </select>
+            <div id="affichage_etudiant" class="card">
+                <div class="card-header">
+                    <h3>Stages</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Année</th>
+                                <th scope="col">Entreprise</th>
+                                <th scope="col">adresse</th>
+                                <th scope="col">Date début</th>
+                                <th scope="col">Date fin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
 
 
-                        //$sql = "SELECT * FROM etudiant INNER JOIN stage ON etudiant.d = stage.id_etudiant";
-                        //$result = $bdsql->query($sql);
-                        //$result->setFetchMode(PDO::FETCH_ASSOC);
-                        //
-                        //while ($row = $result->fetch()) {
-                        //    echo "<tr>";
-                        //    echo "<td>" . $row['nom'] . "</td>";
-                        //    echo "<td>" . $row['prenom'] . "</td>";
-                        //    echo "<td>" . $row['annee'] . "</td>";
-                        //    
-                        //}
+                            //$sql = "SELECT * FROM etudiant INNER JOIN stage ON etudiant.d = stage.id_etudiant";
+                            //$result = $bdsql->query($sql);
+                            //$result->setFetchMode(PDO::FETCH_ASSOC);
+                            //
+                            //while ($row = $result->fetch()) {
+                            //    echo "<tr>";
+                            //    echo "<td>" . $row['nom'] . "</td>";
+                            //    echo "<td>" . $row['prenom'] . "</td>";
+                            //    echo "<td>" . $row['annee'] . "</td>";
+                            //    
+                            //}
 
-                        ?>
-
-
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-        <div id="affichage_entreprise" class="card">
-            <div class="card-header">
-                <h3>Stages</h3>
-            </div>
-            <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Entreprise</th>
-                            <th scope="col">année</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                            ?>
 
 
+                        </tbody>
+                    </table>
+                </div>
 
-                    </tbody>
-                </table>
             </div>
 
-        </div>
+            <div id="affichage_entreprise" class="card">
+                <div class="card-header">
+                    <h3>Stages</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Entreprise</th>
+                                <th scope="col">année</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
 
     </div>
 

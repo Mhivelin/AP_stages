@@ -37,7 +37,7 @@ if (isset($valider)) {
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="ajouter.php">Ajouter</a>
-            </li>
+            </li>l
         </ul>
     </div>
 
@@ -55,10 +55,13 @@ if (isset($valider)) {
             </div>
             <br>
             <button type="submit" class="btn btn-primary" name="valider">Valider</button>
-            <button type="newaccount" class="btn btn-primary" name="valider">Valider</button>
         </form>
     </div>
 
+    <div class="link">
+        <a class="link" href="register.php">Nouveau compte</a>
+    </div>
+    </div>
     <?php
     if ($erreur != "") {
         echo "<div class='alert alert-danger' role='alert'>
